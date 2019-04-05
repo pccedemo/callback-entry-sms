@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<action_element id="Element@1089588382:1527257176054" name="Customer_Lookup_01" version="6.0.1">
+<config>
+<settings>
+<setting name="QueryParameters">'query_string':'{CallData.ANI}'</setting>
+<setting name="Operator">AND</setting>
+</settings>
+<session_data>
+<data create_when="After" name="cid">{Data.Element.Customer_Lookup_01.customer_id}</data>
+</session_data>
+</config>
+</action_element>

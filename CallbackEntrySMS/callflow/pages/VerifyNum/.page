@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page id="Page@2015090764:1509660237304" name="VerifyNum" version="6.0.1">
+<element height="46" id="Element@1813357358:1509660237304" name="VerifyNum" type="Page Entry" width="107" x="340" y="32">
+<exit_states>
+<exit_state name="next" target="Element@4170217:1509660346820"/>
+</exit_states>
+</element>
+<element height="46" id="Element@392956115:1509660346820" name="No SMS" type="Page Connector" width="121" x="711" y="492">
+<page_connector target="Element@381458452:1550307148523">No SMS<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@343400255:1509660346820" name="is mobile" type="Decision" width="157" x="317" y="356">
+<exit_states>
+<exit_state name="mobile" target="Element@689624795:1509660346820"/>
+<exit_state name="landline" target="Element@392956115:1509660346820"/>
+</exit_states>
+</element>
+<element height="46" id="Element@689624795:1509660346820" name="SMS" type="Page Connector" width="116" x="321" y="485">
+<page_connector target="Element@1241053536:1550307129023">SMS<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@4170217:1509660346820" name="Play Background Music Verify Num" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="237" x="294" y="127">
+<exit_states>
+<exit_state name="done" target="Element@1530358567:1550306956111"/>
+</exit_states>
+</element>
+<element height="46" id="Element@1530358567:1550306956111" name="lookup phone carrier primary" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="204" x="286" y="231">
+<exit_states>
+<exit_state name="done" target="Element@343400255:1509660346820"/>
+<exit_state name="Java Exception-any" target="Element@1194464193:1550307367580"/>
+</exit_states>
+</element>
+<element height="46" id="Element@1194464193:1550307367580" name="Copy_of_Play Background Music Verify Num" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="286" x="615" y="230">
+<exit_states>
+<exit_state name="done" target="Element@1739830535:1550307367580"/>
+</exit_states>
+</element>
+<element height="46" id="Element@1739830535:1550307367580" name="lookup phone carrier secondary" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="217" x="658" y="355">
+<exit_states>
+<exit_state name="done" target="Element@343400255:1509660346820"/>
+<exit_state name="Java Exception-any" target="Element@392956115:1509660346820"/>
+</exit_states>
+</element>
+</page>

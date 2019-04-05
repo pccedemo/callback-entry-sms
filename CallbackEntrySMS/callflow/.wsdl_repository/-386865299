@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:webtextsms" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:webtextsms">
+<types>
+<xsd:schema targetNamespace="urn:webtextsms"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="dipNumberRequest">
+  <part name="apiid" type="xsd:string" />
+  <part name="apipwd" type="xsd:string" />
+  <part name="dipnumber" type="xsd:string" /></message>
+<message name="dipNumberResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="sendTextRequest">
+  <part name="apiid" type="xsd:string" />
+  <part name="apipwd" type="xsd:string" />
+  <part name="cellnumber" type="xsd:string" />
+  <part name="textpayload" type="xsd:string" />
+  <part name="fromnumber" type="xsd:string" /></message>
+<message name="sendTextResponse">
+  <part name="return" type="xsd:string" /></message>
+<portType name="webtextsmsPortType">
+  <operation name="dipNumber">
+    <documentation>Check whether number is a cell phone</documentation>
+    <input message="tns:dipNumberRequest"/>
+    <output message="tns:dipNumberResponse"/>
+  </operation>
+  <operation name="sendText">
+    <documentation>Send a text message to a cell phone</documentation>
+    <input message="tns:sendTextRequest"/>
+    <output message="tns:sendTextResponse"/>
+  </operation>
+</portType>
+<binding name="webtextsmsBinding" type="tns:webtextsmsPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="dipNumber">
+    <soap:operation soapAction="urn:webtextsms#dipNumber" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:webtextsms" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:webtextsms" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="sendText">
+    <soap:operation soapAction="urn:webtextsms#sendText" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:webtextsms" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:webtextsms" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="webtextsms">
+  <port name="webtextsmsPort" binding="tns:webtextsmsBinding">
+    <soap:address location="http://soap.webtext.com/webtext_soap.php"/>
+  </port>
+</service>
+</definitions>

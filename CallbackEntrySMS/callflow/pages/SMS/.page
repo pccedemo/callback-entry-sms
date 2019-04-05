@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page id="Page@677241966:1550307113836" name="SMS" version="6.0.1">
+<element height="46" id="Element@80068863:1550307129023" name="PreemptivePrompt1" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="162" x="263" y="128">
+<exit_states>
+<exit_state name="done" target="Element@1392617419:1550307129023"/>
+</exit_states>
+</element>
+<element height="46" id="Element@1241053536:1550307129023" name="SMS" type="Page Entry" width="146" x="271" y="37">
+<exit_states>
+<exit_state name="next" target="Element@80068863:1550307129023"/>
+</exit_states>
+</element>
+<element height="46" id="Element@1036628482:1550307129023" name="SendSMS" type="Page Connector" width="111" x="509" y="307">
+<page_connector target="Element@323111554:1509660037132">SendSMS<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@53483026:1550307129023" name="Queue" type="Page Connector" width="85" x="301" y="359">
+<page_connector target="Element@13804701:1228135733953">Queue<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@1392617419:1550307129023" name="3_Option_Menu_01" src="com.audium.server.voiceElement.menu.MFoundation3OptionMenu" type="Voice Element" width="151" x="268" y="244">
+<exit_states>
+<exit_state name="option1" target="Element@296692480:1550307129023"/>
+<exit_state name="option2" target="Element@1036628482:1550307129023"/>
+<exit_state name="option3" target="Element@53483026:1550307129023"/>
+<exit_state name="max_nomatch" target="Element@53483026:1550307129023">
+<bendpoint>
+<dim1 x="67" y="66"/>
+<dim2 x="67" y="-49"/>
+</bendpoint>
+</exit_state>
+<exit_state name="max_noinput" target="Element@53483026:1550307129023">
+<bendpoint>
+<dim1 x="-44" y="58"/>
+<dim2 x="-44" y="-57"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="46" id="Element@296692480:1550307129023" name="Wants Callback" type="Page Connector" width="131" x="499" y="244">
+<page_connector target="Element@3151821:1228136085359">Wants Callback<config/>
+</page_connector>
+</element>
+</page>

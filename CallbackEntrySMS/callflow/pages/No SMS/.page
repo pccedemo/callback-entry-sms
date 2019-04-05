@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page id="Page@784297865:1550307147038" name="No SMS" version="6.0.1">
+<element height="46" id="Element@20992448:1550307148523" name="Queue" type="Page Connector" width="87" x="233" y="406">
+<page_connector target="Element@13804701:1228135733953">Queue<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@632755428:1550307148523" name="Wants Callback" type="Page Connector" width="137" x="460" y="286">
+<page_connector target="Element@3151821:1228136085359">Wants Callback<config/>
+</page_connector>
+</element>
+<element height="46" id="Element@381458452:1550307148523" name="No SMS" type="Page Entry" width="156" x="199" y="106">
+<exit_states>
+<exit_state name="next" target="Element@1552319785:1550307148523"/>
+</exit_states>
+</element>
+<element height="46" id="Element@59799092:1550307148523" name="PreemptivePrompt2" src="com.audium.server.voiceElement.menu.MYesNoMenu" type="Voice Element" width="162" x="196" y="286">
+<exit_states>
+<exit_state name="yes" target="Element@632755428:1550307148523"/>
+<exit_state name="no" target="Element@20992448:1550307148523"/>
+<exit_state name="max_nomatch" target="Element@20992448:1550307148523">
+<bendpoint>
+<dim1 x="114" y="65"/>
+<dim2 x="115" y="-55"/>
+</bendpoint>
+</exit_state>
+<exit_state name="max_noinput" target="Element@20992448:1550307148523">
+<bendpoint>
+<dim1 x="-61" y="64"/>
+<dim2 x="-60" y="-56"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="46" id="Element@1552319785:1550307148523" name="Copy_of_PreemptivePrompt1" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="205" x="174" y="191">
+<exit_states>
+<exit_state name="done" target="Element@59799092:1550307148523"/>
+</exit_states>
+</element>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<decision id="Element@503045049:1509660326414" name="SendSMS Check phonenumber is not null" version="6.0.1">
+<config>
+<source type="Decision Editor"><![CDATA[<knowledge_base>
+    <rule name="SendSMS Check phonenumber is not null" default_exit_state="Not-NULL">
+        <exit_state name="NULL" conjugate="and">
+            <string operator="equal">
+                <data>
+                    <session name="phonenumber" />
+                </data>
+                <constant_string value="anonymous" />
+            </string>
+        </exit_state>
+    </rule>
+</knowledge_base>]]></source>
+</config>
+</decision>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<action_element id="Element@119505374:1509660379055" name="Set Session Variables" version="6.0.1">
+<config>
+<settings>
+<setting name="initial">0</setting>
+<setting name="type">increment</setting>
+<setting name="step">1</setting>
+</settings>
+<session_data>
+<data create_when="Before" name="menu_option">null</data>
+<data create_when="Before" name="SMStext">Hello,+this+is+Cumulus.+Please+reply+to+this+message+to+begin+chatting+with+an+agent.</data>
+<data create_when="Before" name="VerifyResponse">.</data>
+<data create_when="Before" name="VerifyNum_Auth">dwgqn47Vkytx384B</data>
+<data create_when="Before" name="SendTextAPI_ID">dwgqn47V</data>
+<data create_when="Before" name="SendTextAPI_PWD">kytx384B</data>
+<data create_when="Before" name="SendTextFromNumber">+12145707121</data>
+<data create_when="Before" name="AudioPath">http://media:7000/audio/webtext/</data>
+<data create_when="Before" name="WebService_FetchTimeout">5s</data>
+<data create_when="Before" name="phonenumber">{CallData.ANI}</data>
+</session_data>
+</config>
+</action_element>
