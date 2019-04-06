@@ -5,18 +5,18 @@
 <exit_state name="next" target="Element@503045049:1509660326414"/>
 </exit_states>
 </element>
-<element height="46" id="Element@1766110669:1509660326414" name="Queue" type="Page Connector" width="85" x="330" y="538">
+<element height="46" id="Element@1766110669:1509660326414" name="Queue" type="Page Connector" width="85" x="331" y="575">
 <page_connector target="Element@13804701:1228135733953">Queue<config/>
 </page_connector>
 </element>
-<element height="46" id="Element@175730050:1509660326414" name="SMS_Return to ICM" src="com.audium.server.voiceElement.internal.CiscoSubdialogReturnElement" type="Subdialog Return" width="173" x="30" y="572">
+<element height="46" id="Element@175730050:1509660326414" name="SMS_Return to ICM" src="com.audium.server.voiceElement.internal.CiscoSubdialogReturnElement" type="Subdialog Return" width="173" x="31" y="609">
 <exit_states>
 <exit_state name="done"/>
 </exit_states>
 </element>
 <element height="46" id="Element@1401550669:1509660326414" name="Play Background Music Send SMS" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="260" x="240" y="207">
 <exit_states>
-<exit_state name="done" target="Element@783565667:1550302204753"/>
+<exit_state name="done" target="Element@794413197:1554506375974"/>
 </exit_states>
 </element>
 <element height="46" id="Element@503045049:1509660326414" name="SendSMS Check phonenumber is not null" type="Decision" width="273" x="233" y="115">
@@ -34,23 +34,23 @@
 <exit_state name="Not-NULL" target="Element@1401550669:1509660326414"/>
 </exit_states>
 </element>
-<element height="46" id="Element@2084852103:1509660326414" name="Audio_Error" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="114" x="316" y="443">
+<element height="46" id="Element@2084852103:1509660326414" name="Audio_Error" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="114" x="317" y="480">
 <exit_states>
 <exit_state name="done" target="Element@1766110669:1509660326414"/>
 </exit_states>
 </element>
-<element height="46" id="Element@35020304:1509660326414" name="Audio_Success" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="128" x="50" y="443">
+<element height="46" id="Element@35020304:1509660326414" name="Audio_Success" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="128" x="51" y="480">
 <exit_states>
 <exit_state name="done" target="Element@175730050:1509660326414"/>
 </exit_states>
 </element>
-<element height="46" id="Element@783565667:1550302204753" name="send sms" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="143" x="303" y="327">
+<element height="46" id="Element@783565667:1550302204753" name="send sms" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="143" x="304" y="364">
 <exit_states>
 <exit_state name="done" target="Element@531133262:1550605307106"/>
 <exit_state name="Java Exception-any" target="Element@2084852103:1509660326414"/>
 </exit_states>
 </element>
-<element height="46" id="Element@531133262:1550605307106" name="register phone in answers database" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="234" x="-5" y="332">
+<element height="46" id="Element@531133262:1550605307106" name="register phone in answers database" src="com.audium.server.action.rest.client.RestClientAction" type="Action Element" width="234" x="-4" y="369">
 <exit_states>
 <exit_state name="done" target="Element@35020304:1509660326414"/>
 <exit_state name="Java Exception-any" target="Element@35020304:1509660326414">
@@ -59,6 +59,11 @@
 <dim2 x="124" y="-47"/>
 </bendpoint>
 </exit_state>
+</exit_states>
+</element>
+<element height="46" id="Element@794413197:1554506375974" name="make request body" src="com.audium.server.action.setvalue.SetValueAction" type="Action Element" width="213" x="264" y="291">
+<exit_states>
+<exit_state name="done" target="Element@783565667:1550302204753"/>
 </exit_states>
 </element>
 </page>
